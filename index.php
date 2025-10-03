@@ -4,7 +4,6 @@ ini_set("display_errors", 1);
 session_start();
 require __DIR__ . '/config.php';
 
-// Si déjà connecté, redirection vers la page protégée
 if (!empty($_SESSION['auth']) && $_SESSION['auth'] === true) {
     header('Location: secret.php');
     exit;
@@ -16,11 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'] ?? '';
     $pass  = $_POST['password'] ?? '';
 
-<<<<<<< HEAD
-    if ($login === APP_USER && password_verify($pass, APP_PASS_HASH)) {
-=======
-    if ($login === APP_USER && password_verify($pass, APP_PASS_HASH)OR $login === APP_USER1 && password_verify($pass, APP_PASS_HASH1)) {
->>>>>>> ce2f923 (Premier commit depuis mon serveur)
+    if (
+        ($login === APP_USER && password_verify($pass, APP_PASS_HASH)) ||
+        ($login === APP_USER1 && password_verify($pass, APP_PASS_HASH1))
+    ) {
         $_SESSION['auth'] = true;
         session_regenerate_id(true);
         header('Location: secret.php');
@@ -35,27 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <title>Connexion</title>
-<<<<<<< HEAD
-</head>
-<body>
-  <h1>Connexion</h1>
-
-  <?php if ($error): ?>
-    <p style="color:red;"><?= htmlspecialchars($error) ?></p>
-  <?php endif; ?>
-
-  <form method="post" action="index.php" autocomplete="off">
-    <div>
-      <label for="login">Nom d’utilisateur</label><br>
-      <input type="text" id="login" name="login" required>
-    </div>
-    <div>
-      <label for="password">Mot de passe</label><br>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Se connecter</button>
-  </form>
-=======
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -105,11 +82,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
       </form>
 
-      <div class="login-footer">
-        <a href="#" class="forgot-link">Mot de passe oublié ?</a>
-      </div>
-    </div>
-  </div>
->>>>>>> ce2f923 (Premier commit depuis mon serveur)
-</body>
-</html>
+      <div class="login-footer
