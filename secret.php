@@ -9,13 +9,19 @@ if (empty($_SESSION['auth'])) {
 ?>
 <!doctype html>
 <html lang="fr">
+<link href="styles.css" rel="stylesheet">
 <head>
   <meta charset="utf-8">
   <title>Zone prot√©g√©e</title>
 </head>
 <body>
-  <h1>Bienvenue dans la zone prot√©g√©e Ì†ºÌæâ</h1>
-  <p>Antoine si tu vois √ßa t pas bo.</p>
-  <p><a href="logout.php">Se d√©connecter</a></p>
+ <header>
+     <div class="navbar">
+     <nav>
+         <button class="menu-button"><a>Accueil</a></button>
+         <button class="menu-button"><a>Contact</a></button>
+         <button class="menu-button"><a>Mes Projets</a></button>
+
+                                            </nav></header></div>
 </body>
 </html>
