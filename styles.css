@@ -1,23 +1,33 @@
 .navbar{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 10px;
     width: 100%;
     background: #00a8cc;
+    text-align: center;
 
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 .navbar nav {
     display: flex;
     gap:150px;
     text-decoration: none;
-}
+    justify-content: center;
+text-align: center;}
 .menu-button{
     background-color: #00a8cc;
     border: 2px solid white;
     border-radius: 10px;
     padding: 0.8rem 1.8rem;
     color: white;
+
 }
 .menu-button:hover{
     background-color: white;
@@ -25,33 +35,64 @@
     border: 2px solid #00a8cc;
 }
 body{
-margin: 0}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+
+    margin: 0}
+.container{
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    box-shadow: 1px 1px 5px #00a8cc;
+    padding-bottom: 5%;
+}
+.container h1{
+    color: #00a8cc;
+    text-align: center;
+}
 .about{
     display: flex;
     background-color: white;
     box-shadow: 0px 1px 5px #00a8cc;
     border-radius: 10px;
     color: #00a8cc;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
     height: auto;
     padding-bottom: 1%;
     border-left: 3px solid #00a8cc;
-
+    margin-top: 10%;
     display: block;
-
 }
+.about:hover{
+    background-color: #00a8cc;
+    color: white;
+    border-left: 3px solid white;
+}
+
 .about h2{
     margin-left: 20px;
+    padding-top: 1%;
 
 }
 .about p{
     margin-left: 30px   ;
 }
-.about hr{
+hr{
     border : 1px solid #00a8cc;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+footer {
+    background-color: #00a8cc;
+    color: white;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid #00a8cc;
 }
 
 
