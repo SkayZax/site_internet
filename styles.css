@@ -24,3 +24,34 @@
     color: #00a8cc;
     border: 2px solid #00a8cc;
 }
+body{
+margin: 0}
+.about{
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 1px 5px #00a8cc;
+    border-radius: 10px;
+    color: #00a8cc;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+    padding-bottom: 1%;
+    border-left: 3px solid #00a8cc;
+
+    display: block;
+
+}
+.about h2{
+    margin-left: 20px;
+
+}
+.about p{
+    margin-left: 30px   ;
+}
+.about hr{
+    border : 1px solid #00a8cc;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
