@@ -122,20 +122,19 @@ hr{
     display: flex;
     flex-direction: column;
     flex: 0 1 400px;
-    border: 1px solid #00a8cc;
-    background-color: white;
+    border: 2px solid #00a8cc;
+    box-shadow: 0px 1px 5px #00a8cc;
+    background-color: transparent;
     border-radius: 10px;
-    padding: 15px;
+    padding: 0;
     text-align: center;
 }
-.couleur {
 
+.projet-header{
     background-color: #00a8cc;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .projet img{
@@ -143,6 +142,7 @@ hr{
     height: 50px;
     background-color: #00a8cc;
 }
+
 footer {
     background-color: #00a8cc;
     color: white;
