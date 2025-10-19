@@ -138,9 +138,30 @@ hr{
 }
 
 .projet img{
-    width: 100px;
-    height: 50px;
+    width: 50%;
+    height: 75%;
     background-color: #00a8cc;
+
+}
+.projet-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+.tag {
+    display: inline-block;
+    background-color: white;
+    color: #00a8cc;
+    border: 1px solid #00a8cc;
+    border-radius: 5px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 footer {
