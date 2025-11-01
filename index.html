@@ -1,88 +1,94 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Portfolio</title>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
     <link href="styles.css" rel="stylesheet">
-
 </head>
 <body>
- <header>
-     <div class="navbar">
-         <h1>Bienvenue sur mon portfolio</h1>
-     <nav>
 
-         <button class="menu-button"><a>Accueil</a></button>
-         <button class="menu-button"><a>Contact</a></button>
-         <button class="menu-button"><a>Mes Projets</a></button>
+<div id="popup">
+    <div class="popup-content">
+        <h2>🚧 Site en construction 🚧</h2>
+        <p>Ce portfolio est actuellement en développement.<br>
+            Revenez bientôt pour voir la version complète !</p>
+        <button id="close-popup">OK</button>
+    </div>
+</div>
 
-                                            </nav></div></header>
+<header>
+    <div class="navbar">
+        <h1>Bienvenue sur mon portfolio</h1>
+        <nav>
+            <button class="menu-button"><a>Accueil</a></button>
+            <button class="menu-button"><a>Contact</a></button>
+            <button class="menu-button"><a>Mes Projets</a></button>
+        </nav>
+    </div>
+</header>
+
 <section class="about">
     <h2>A Propos de moi</h2>
     <hr>
-    <p>Bonjour ! je suis un etudiant en développement d'application et web, Sur ce site vous trouverez des <b>Projets</b></p>
+    <p>Bonjour ! je suis un étudiant en développement d'application et web. Sur ce site vous trouverez des <b>Projets</b>.</p>
 </section>
- <div class="container">
-     <h1>Mes compétences</h1>
-     <hr>
-<section class="about">
-    <h2>Langages de programmmation</h2>
+
+<div class="container">
+    <h1>Mes compétences</h1>
     <hr>
-    <ul>
-        <li>Java/JavaFX</li>
-        <li>HTML/CSS</li>
-        <li>PYTHON</li>
-        <li>SQL/PLPGSQL</li>
-        <li>PHP(en cour d'apprentissage)</li>
-        <li>FLASK (en cour d'apprentissage)</li>
-        <li>Markdown</li>
+    <section class="about">
+        <h2>Langages de programmation</h2>
+        <hr>
+        <ul>
+            <li>Java/JavaFX</li>
+            <li>HTML/CSS</li>
+            <li>Python</li>
+            <li>SQL/PLPGSQL</li>
+            <li>PHP (en cours d'apprentissage)</li>
+            <li>Flask (en cours d'apprentissage)</li>
+            <li>Markdown</li>
+        </ul>
+    </section>
 
-    </ul>
+    <section class="about">
+        <h2>Outils de développement</h2>
+        <hr>
+        <ul>
+            <li>Eclipse</li>
+            <li>Visual Studio Code</li>
+            <li>Github/Gitlab</li>
+            <li>Pack Ultimate JetBrains</li>
+            <li>SceneBuilder</li>
+            <li>Postgres</li>
+        </ul>
+    </section>
+</div>
+
+<section class="container-projet">
+    <div class="projet">
+        <div class="projet-header">
+            <img src="VoyageVoyage.png" alt="projet1">
+            <h2>Site de vente</h2>
+        </div>
+        <p>Un projet be like</p>
+    </div>
+
+    <div class="projet">
+        <h2>Site de vente</h2>
+    </div>
+
+    <button class="buttonvp"><a>Voir plus...</a></button>
 </section>
-     <section class="about">
-    <h2>Outil de developpement</h2>
-         <hr>
-         <ul>
-             <li>Eclipse</li>
-             <li>Visual Studio Code</li>
-             <li>Github/Gitlab</li>
-             <li>Pack ultimate jetbrain</li>
-             <li>SceneBuilder</li>
-             <li>Postgres</li>
-         </ul>
-     </section>
- </div>
- <section class="container-projet">
-     <div class="projet">
-         <div class="projet-header">
 
-            <img src="VoyageVoyage.png">
-
-     </div>
-         <p>Un projet be like</p>
-         <div class="projet-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-         </div>
-
-     </div>
-     <div class="projet">
-            <div class="projet-header">
-
-                <img src="OdeFrance.png">
-            </div>
-         <h2>OdeFrance</h2>
-            <p>Application JavaFX de gestion des stocks et clients pour une entreprise de distribution d'eau, incluant un système de commandes, points de fidélité et paiements.
-            </p>
-            <div class="projet-tags">
-                <span class="tag">Java</span>
-                <span class="tag">JavaFX</span>
-            </div>
-
-     </div>
-     <button class="buttonvp"><a>Voir plus...</a></button>
- </section>
 <footer><p>2025 SkayZax</p></footer>
 
+<script>
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("close-popup");
+
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+</script>
 </body>
 </html>
