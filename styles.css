@@ -89,14 +89,13 @@ hr{
     margin-right: 20px;
 }
 .buttonvp {
+    display: flex;
     margin: 20px auto;
-    display: block;
     background-color: #00a8cc;
     border: 2px solid white;
     border-radius: 10px;
     padding: 0.8rem 1.8rem;
     color: white;
-    text-align: center;
     margin-top: 5%;
 }
 .buttonvp:hover{
