@@ -111,7 +111,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-
     justify-content: flex-start;
     gap: 20px;
     background-color: white;
@@ -124,10 +123,13 @@ a:hover {
 }
 .projets-scroll {
     display: flex;
+    flex:1;
     flex-direction: row;
+    align-items: stretch;
     flex-wrap: nowrap;
     text-align: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    padding-right: 10px;
     gap: 20px;
     overflow-x: auto;
     padding-bottom: 10px;
@@ -148,19 +150,22 @@ a:hover {
 .projet {
     display: flex;
     flex-direction: column;
-    flex: 0 0 400px;
+    flex: 0 0 350px;
+    min-width: 0;
+    max-width: none;
     border: 2px solid white;
     box-shadow: 0px 1px 5px #00a8cc;
     background-color: transparent;
     border-radius: 10px;
     padding: 0px;
     margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
 }
 .projet:hover {
     display: flex;
     flex-direction: column;
-    flex: 0 0 400px;
+    flex: 0 0 350px;
     border: 2px solid #00a8cc;
     box-shadow: 0px 1px 5px #00a8cc;
     background-color: transparent;
