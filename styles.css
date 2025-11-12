@@ -99,14 +99,19 @@ a {
     padding: 0.8rem 1.8rem;
     color: white;
     text-align: center;
-    width: 5%;
 }
 a:hover {
     background-color: white;
     color: #00a8cc;
     border: 2px solid #00a8cc;
 }
-
+.button{
+    display: flex;
+    width:5%;
+    text-align: center;
+    margin-left: 45%;
+    white-space: nowrap;
+}
 .container-projet {
     display: flex;
     flex-direction: column;
@@ -220,6 +225,12 @@ footer {
     box-sizing: border-box;
     width: 100%;
 }
+footer img{
+    width: 5%;
+}
+footer a{
+    display: flex;
+}
 
 #popup {
     position: fixed;
@@ -264,4 +275,40 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .navbar nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .navbar a {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+    .about {
+        margin: 5%;
+    }
+    .container {
+        margin: 5%;
+        padding: 5%;
+    }
+    .projets-scroll {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projet {
+        flex: 1 0 auto;
+        width: 90%;
+    }
+    .button {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+    footer img {
+        width: 50px;
+    }
 }
