@@ -298,6 +298,73 @@ footer img {
 .back-button:hover {
     background-color: #007ea1;
 }
+.cv-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.cv-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #00a8cc;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.cv-button:hover {
+    background-color: white;
+    color: #00a8cc;
+    border-color: #00a8cc;
+    transform: translateY(-3px);
+}
+
+/* Grille des réseaux sociaux */
+.social-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.social-item {
+    text-align: center;
+    text-decoration: none;
+    color: #00a8cc;
+    transition: transform 0.3s;
+}
+
+.social-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.social-item:hover {
+    transform: scale(1.1);
+}
+
+.social-item p {
+    margin: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .social-grid {
+        gap: 20px;
+    }
+    .cv-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 @media (max-width: 768px) {
     .detail-header {
