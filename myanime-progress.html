@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Projet - MyAnimeProgress</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <h1>Projet : MyAnimeProgress 📺</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="projet.html">Mes Projets</a>
+        </nav>
+    </div>
+</header>
+
+<section class="container-detail">
+    <div class="detail-header">
+        <img src="imageMap.png" alt="MyAnimeProgress Logo" class="detail-main-img">
+        <div class="detail-intro">
+            <h2>Suivi de progression d'animés</h2>
+            <p>Une plateforme web pour ne plus jamais oublier où vous en êtes dans vos séries préférées.</p>
+            <div class="projet-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Jikan API</span>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="detail-content">
+        <h3>Description du projet</h3>
+        <p>
+            <strong>MyAnimeProgress</strong> est une application web conçue pour aider les fans d'animation japonaise à gérer leur liste de visionnage.
+            Le projet se concentre sur l'interaction avec des données réelles en temps réel via une API externe.
+        </p>
+
+        <h3>Fonctionnalités Actuelles</h3>
+        <ul>
+            <li><strong>Affichage dynamique :</strong> Génération d'une liste d'animés avec leurs affiches officielles.</li>
+            <li><strong>Intégration API :</strong> Utilisation de l'API <em>Jikan</em> pour récupérer les données directement depuis MyAnimeList.</li>
+            <li><strong>Interface Responsive :</strong> Design moderne utilisant Flexbox pour s'adapter à tous les écrans.</li>
+        </ul>
+
+        <h3>Objectifs et Évolutions (🔜)</h3>
+        <p>Le projet est en cours de développement avec plusieurs fonctionnalités majeures prévues :</p>
+        <ul>
+            <li><strong>Système de comptes :</strong> Création d'un espace utilisateur pour sauvegarder sa progression.</li>
+            <li><strong>Gestion d'épisodes :</strong> Possibilité de noter précisément le dernier épisode visionné.</li>
+            <li><strong>Recherche avancée :</strong> Moteur de recherche pour trouver n'importe quel animé de la base MyAnimeList.</li>
+        </ul>
+
+        <h3>Technologies exploitées</h3>
+        <table class="tech-table">
+            <tr>
+                <td><strong>Backend</strong></td>
+                <td>Python avec le framework Flask</td>
+            </tr>
+            <tr>
+                <td><strong>Frontend</strong></td>
+                <td>HTML5 / CSS3 avec le moteur de template Jinja2</td>
+            </tr>
+            <tr>
+                <td><strong>Données</strong></td>
+                <td>API REST (Jikan / MyAnimeList)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="detail-footer">
+        <a href="projet.html" class="back-button">← Retour aux projets</a>
+    </div>
+</section>
+
+<footer>
+    <p>2025 SkayZax - Mathis Poirier</p>
+</footer>
+
+</body>
+</html>

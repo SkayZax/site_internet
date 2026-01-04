@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Projet - BomberMan</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <h1>Projet : BomberMan 💣</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="projet.html">Mes Projets</a>
+        </nav>
+    </div>
+</header>
+
+<section class="container-detail">
+    <div class="detail-header">
+        <img src="bomberman.png" alt="BomberMan Icon" class="detail-main-img">
+        <div class="detail-intro">
+            <h2>Jeu de stratégie et d'action</h2>
+            <p>Développement d'une version complète de BomberMan en <strong>JavaFX</strong>.</p>
+            <div class="projet-tags">
+                <span class="tag">Java 21</span>
+                <span class="tag">JavaFX</span>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="detail-content">
+        <h3>Description du projet</h3>
+        <p>
+            Ce projet consiste en la création d'un jeu BomberMan fonctionnel où le joueur doit naviguer dans un labyrinthe, placer des bombes pour détruire des obstacles et éliminer des ennemis.
+            L'accent a été mis sur une séparation claire entre le modèle de données et l'interface graphique.
+        </p>
+
+        <h3>Fonctionnalités Implémentées</h3>
+        <ul>
+            <li><strong>Système de bombes variées :</strong> Gestion de bombes classiques, de bombes en ligne, en colonne et de grandes bombes avec différents rayons d'explosion.</li>
+            <li><strong>Intelligence Artificielle :</strong> Présence d'ennemis avec différents comportements, tels que des Gobelins, des Minotaures et des Punkers.</li>
+            <li><strong>Génération de carte :</strong> Utilisation d'une <em>Factory</em> pour créer dynamiquement la carte du jeu avec des murs incassables, des briques destructibles et des bonus.</li>
+            <li><strong>Gestion des PV :</strong> Système de points de vie pour le joueur avec retour visuel immédiat.</li>
+        </ul>
+
+        <h3>Architecture Technique</h3>
+        <table class="tech-table">
+            <tr>
+                <td><strong>Langage</strong></td>
+                <td>Java</td>
+            </tr>
+            <tr>
+                <td><strong>Framework UI</strong></td>
+                <td>JavaFX avec FXML pour les vues</td>
+            </tr>
+            <tr>
+                <td><strong>Outil de build</strong></td>
+                <td>Gradle</td>
+            </tr>
+            <tr>
+                <td><strong>Architecture</strong></td>
+                <td>Modèle-Vue-Contrôleur (MVC) avec Facade</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="detail-footer">
+        <a href="projet.html" class="back-button">← Retour aux projets</a>
+    </div>
+</section>
+
+<footer>
+    <p>2025 SkayZax - Projet BomberMan</p>
+</footer>
+
+</body>
+</html>
