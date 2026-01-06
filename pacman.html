@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails Projet - Pac-Man</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <h1>Projet : Pac-Man 🟡</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="projet.html">Mes Projets</a>
+        </nav>
+    </div>
+</header>
+
+<section class="container-detail">
+    <div class="detail-header">
+        <img src="pacman.png" alt="Pac-Man Logo" class="detail-main-img">
+        <div class="detail-intro">
+            <h2>Jeu d'Arcade & Architecture Logicielle</h2>
+            <p>Développement d'un Pac-Man fonctionnel avec une architecture propre et modulaire.</p>
+            <div class="projet-tags">
+                <span class="tag">Java 21</span>
+                <span class="tag">Design Patterns</span>
+                <span class="tag">Gradle</span>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="detail-content">
+        <h3>Description du projet</h3>
+        <p>
+            Ce projet réalisé en équipe consistait à développer une version de Pac-Man en JavaFX en appliquant les bonnes pratiques de la programmation orientée objet.
+            L'enjeu majeur était d'utiliser des patrons de conception pour rendre le code flexible et évolutif.
+        </p>
+
+        <h3>Fonctionnalités Clés</h3>
+        <ul>
+            <li><strong>Système de jeu complet :</strong> Gestion du score, des points de vie, des pac-gommes et des méga-gommes.</li>
+            <li><strong>Intelligence des Fantômes :</strong> Différentes stratégies de déplacement pour les fantômes (poursuite, fuite, etc.).</li>
+            <li><strong>Génération de Labyrinthe :</strong> Création dynamique de la carte de jeu avec gestion des collisions précises.</li>
+            <li><strong>Animations Fluides :</strong> Utilisation d'un <em>AnimationTimer</em> pour une expérience de jeu à 60 FPS.</li>
+        </ul>
+
+        <h3>Design Patterns Appliqués</h3>
+        <p>Pour structurer ce projet, nous avons implémenté plusieurs patrons de conception :</p>
+        <ul>
+            <li><strong>Stratégie (Strategy) :</strong> Pour varier les comportements des fantômes et les états de Pac-Man (vulnérable/invulnérable).</li>
+            <li><strong>Observateur (Observer) :</strong> Pour la gestion des événements comme le score ou la consommation des méga-gommes.</li>
+            <li><strong>Fabrique (Factory) :</strong> Pour la création centralisée des sprites et des éléments de la carte.</li>
+            <li><strong>Constructeur (Builder) :</strong> Pour l'initialisation complexe du labyrinthe.</li>
+        </ul>
+
+        <h3>Stack Technique</h3>
+        <table class="tech-table">
+            <tr>
+                <td><strong>Langage</strong></td>
+                <td>Java 21</td>
+            </tr>
+            <tr>
+                <td><strong>Framework UI</strong></td>
+                <td>JavaFX (Propriétés et Bindings pour l'UI)</td>
+            </tr>
+            <tr>
+                <td><strong>Build Tool</strong></td>
+                <td>Gradle</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="detail-footer">
+        <a href="projet.html" class="back-button">← Retour aux projets</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Mathis Poirier</h3>
+            <p>Étudiant en Informatique | Passionné par le développement</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="projet.html">Mes Projets</a>
+            <a href="contact.html">Contact & CV</a>
+        </div>
+
+        <div class="footer-socials">
+            <h4>Suivez-moi</h4>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mathis-poirier1/" target="_blank">
+                    <img src="sociale.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/votre-pseudo" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="white-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 SkayZax - Tous droits réservés</p>
+    </div>
+</footer>
+
+</body>
+</html>
