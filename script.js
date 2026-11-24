@@ -1300,6 +1300,13 @@
     const ghLink = $('#modal-github-link');
     if (ghLink) ghLink.href = proj.githubUrl || PORTFOLIO_DATA.profile.github;
 
+    // Lien vers le site en ligne, pour les projets qui en ont un
+    const demoLink = $('#modal-demo-link');
+    if (demoLink) {
+      demoLink.style.display = proj.demoUrl ? '' : 'none';
+      demoLink.href = proj.demoUrl || '#';
+    }
+
     modalDialog.showModal();
     document.body.style.overflow = 'hidden';
   }
