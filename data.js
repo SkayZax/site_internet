@@ -184,23 +184,27 @@ const PORTFOLIO_DATA = {
       logo: "assets/logos/myanime-progress.png",
       logoTheme: "light",
       screenshots: [
-        { src: "assets/captures/myanime-progress-1.webp", alt: "Tableau de bord de MyAnimeProgress pour un nouveau compte" },
-        { src: "assets/captures/myanime-progress-2.webp", alt: "Page de connexion de MyAnimeProgress" }
+        { src: "assets/captures/myanime-accueil.webp", alt: "Page d'accueil de MyAnimeProgress" },
+        { src: "assets/captures/myanime-fiche.webp", alt: "Fiche d'un animé avec une case par épisode" },
+        { src: "assets/captures/myanime-progression.webp", alt: "Page de progression avec le temps passé et les animés suivis" }
       ],
       description: "Site en Flask pour noter à quel épisode on en est dans ses animés.",
-      longDescription: "Je voulais savoir où j'en étais dans les animés que je regarde. Le site récupère les fiches avec l'API Jikan et garde la progression de chaque compte dans une base SQLite.",
+      longDescription: "Je voulais savoir où j'en étais dans les animés que je regarde. Le site récupère les fiches avec l'API Tenrai et garde la progression de chaque compte dans une base SQLite. Il est en ligne et s'installe comme une application sur mobile.",
       highlights: [
         "Recherche d'animés et filtre par genre.",
-        "Tableau de bord avec les épisodes vus et le temps passé.",
+        "Une case par épisode pour noter où on en est.",
+        "Page de progression avec les épisodes vus et le temps passé.",
+        "Nombre d'épisodes sortis à jour pour les séries en cours.",
         "Liste de favoris.",
         "Inscription avec un code de vérification envoyé par email.",
-        "Synopsis traduits en français."
+        "Synopsis traduits en français.",
+        "Sécurité : essais limités, jetons CSRF et sessions révocables."
       ],
       designPatterns: [],
       tech: ["Python", "Flask", "SQL", "HTML", "CSS"],
       githubUrl: "https://github.com/SkayZax/MyAnimeProgress",
-      demoUrl: null,
-      stats: { stack: "Python et Flask", context: "Projet solo", api: "Jikan" }
+      demoUrl: "https://anime.skayzax.fr",
+      stats: { stack: "Python et Flask", context: "Projet solo", api: "Tenrai" }
     }
   ]
 };
