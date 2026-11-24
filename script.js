@@ -1100,6 +1100,12 @@
   /* ==========================================================
      5. Rendu de la Grille Complète & Filtres Multiples
      ========================================================== */
+  // Clé de comparaison d'une techno : HTML5 → html, CSS3 → css, JavaFX → java
+  function techKey(name) {
+    const key = name.toLowerCase().replace(/\d+$/, '');
+    return key === 'javafx' ? 'java' : key;
+  }
+
   function renderProjectsGrid() {
     const grid = $('#projects-grid');
     const countEl = $('#result-count');
@@ -1116,8 +1122,8 @@
         return false;
       }
       if (state.filters.tech) {
-        const query = state.filters.tech.toLowerCase();
-        const hasTech = proj.tech.some(t => t.toLowerCase().includes(query));
+        const query = techKey(state.filters.tech);
+        const hasTech = proj.tech.some(t => techKey(t) === query);
         if (!hasTech) return false;
       }
       return true;
@@ -1182,7 +1188,7 @@
     const select = $('#filter-tech-select');
     if (select) {
       for (let opt of select.options) {
-        if (opt.value.toLowerCase() === techName.toLowerCase()) {
+        if (techKey(opt.value) === techKey(techName)) {
           select.value = opt.value;
           break;
         }
