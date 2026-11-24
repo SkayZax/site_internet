@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathis Poirier (SkayZax), développeur d'applications et web</title>
-  <meta name="description" content="Portfolio de Mathis Poirier (SkayZax), étudiant en BUT Informatique. Jeux et applications en JavaFX, sites web et un outil en Python.">
+  <meta name="description" content="Portfolio de Mathis Poirier (SkayZax), étudiant en BUT Informatique. Jeux et applications en JavaFX, sites web en Laravel et en Flask.">
   <meta name="theme-color" content="#E26823">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mathis Poirier, développeur d'applications et web">
-  <meta property="og:description" content="Étudiant en BUT Informatique. Mes projets en JavaFX, en Python et pour le web.">
+  <meta property="og:description" content="Étudiant en BUT Informatique. Mes projets en JavaFX, en Laravel et en Flask.">
 
   <!-- Polices Google Fonts & Devicons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <!-- Lien d'évitement -->
@@ -106,7 +106,7 @@
           Je programme surtout en <span>Java avec JavaFX</span>, et je fais aussi des sites web.
         </h2>
         <p class="about-text">
-          J'apprends les design patterns en les utilisant dans mes projets. Pour Pac-Man, j'ai travaillé en équipe sur un moteur de jeu JavaFX qui tourne à 60 FPS. OdeFrance est une application de gestion reliée à une base SQL, avec un modèle MVC et des DAO.
+          Mes projets en Java viennent du BUT Informatique. Pour Pac-Man, nous étions quatre à programmer un jeu en JavaFX. OdeFrance, aussi fait à quatre, gère les stocks et les commandes d'un vendeur d'eau. Sur mon temps libre, j'ai fait MyAnimeProgress, un site en Flask pour suivre mes animés.
         </p>
 
         <div class="about-stats">
@@ -115,8 +115,8 @@
             <span class="stat-label">Projets sur ce site</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">4</span>
-            <span class="stat-label">Design patterns dans Pac-Man</span>
+            <span class="stat-num">2</span>
+            <span class="stat-label">Sites web</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">3</span>
@@ -329,7 +329,16 @@
       <button type="button" class="modal-close-btn" id="modal-close" aria-label="Fermer la modale">✕</button>
 
       <div class="modal-scroll-area">
-        <img src="" alt="" class="modal-hero-img" id="modal-img">
+        <div class="modal-gallery" id="modal-gallery">
+          <img src="" alt="" class="modal-hero-img" id="modal-img">
+          <button type="button" class="gallery-btn gallery-btn--prev" id="gallery-prev" aria-label="Capture précédente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="gallery-btn gallery-btn--next" id="gallery-next" aria-label="Capture suivante">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <span class="gallery-count" id="gallery-count" aria-live="polite"></span>
+        </div>
 
         <span class="modal-kind-badge" id="modal-kind"></span>
         <h3 class="modal-title" id="modal-title"></h3>
@@ -387,7 +396,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="data.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

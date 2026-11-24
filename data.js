@@ -51,117 +51,125 @@ const PORTFOLIO_DATA = {
     {
       id: "pacman-javafx",
       title: "Pac-Man JavaFX",
-      subtitle: "Jeu d'arcade avec des design patterns",
+      subtitle: "Jeu d'arcade en JavaFX",
       featured: true,
       platform: "desktop",
       platformLabel: "Desktop (JavaFX)",
       kind: "Universitaire",
-      date: "2024",
+      date: "2025",
       image: "assets/pacman.jpg",
       logo: "assets/logos/pacman.svg",
       logoTheme: "night",
       screenshots: [
-        "assets/pacman.jpg"
+        { src: "assets/captures/pacman-1.webp", alt: "Écran de départ de Pac-Man" },
+        { src: "assets/captures/pacman-2.webp", alt: "Début de partie de Pac-Man avec quatre fantômes" },
+        { src: "assets/captures/pacman-3.webp", alt: "Partie de Pac-Man en cours, score 940" }
       ],
-      description: "Pac-Man refait en JavaFX, en programmation orientée objet, avec quatre design patterns.",
-      longDescription: "Projet universitaire réalisé en équipe pour apprendre les design patterns. Le moteur de jeu utilise un AnimationTimer à 60 FPS. Les collisions sont calculées au pixel près et chaque type de fantôme a sa propre IA.",
+      description: "Pac-Man refait en JavaFX, à quatre, pendant le BUT Informatique.",
+      longDescription: "Projet universitaire réalisé à quatre, à partir d'une base fournie en cours. Le joueur commence avec trois vies, mange les pac-gommes et évite quatre fantômes qui se déplacent au hasard.",
       highlights: [
-        "Quatre comportements de fantômes : traque, embuscade, patrouille et fuite.",
-        "Labyrinthes générés et lus par le programme, avec des bonus et des méga-gommes.",
-        "Boucle de rendu à 60 FPS, séparée du reste du code.",
-        "Strategy pour les comportements de l'IA, Observer pour le score et les jauges, Factory pour les entités, Builder pour les niveaux."
+        "Carte générée par le programme.",
+        "Collisions entre le joueur, les fantômes et les pac-gommes, avec un score et des vies.",
+        "Boucle de jeu avec un AnimationTimer.",
+        "Code séparé entre le modèle, la vue et le contrôleur."
       ],
-      designPatterns: ["Strategy", "Observer", "Factory", "Builder"],
-      tech: ["Java", "JavaFX", "Gradle", "Design patterns"],
+      designPatterns: ["MVC"],
+      tech: ["Java", "JavaFX", "Gradle"],
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
-      stats: { architecture: "POO / Patterns", fps: "60 FPS", stack: "Java 21" }
+      stats: { architecture: "MVC", loop: "AnimationTimer", stack: "Java 21" }
     },
     {
       id: "bomberman-javafx",
       title: "BomberMan",
-      subtitle: "Jeu de stratégie en MVC",
+      subtitle: "Jeu JavaFX en MVC",
       featured: true,
       platform: "desktop",
       platformLabel: "Desktop (JavaFX)",
       kind: "Universitaire",
-      date: "2024",
+      date: "2025",
       image: "assets/bomberman.jpg",
       logo: "assets/logos/bomberman.png",
       logoTheme: "night",
       screenshots: [
-        "assets/bomberman.jpg"
+        { src: "assets/captures/bomberman-1.webp", alt: "Carte de BomberMan avec le joueur et trois ennemis" },
+        { src: "assets/captures/bomberman-2.webp", alt: "Une autre carte de BomberMan générée au lancement" }
       ],
-      description: "BomberMan refait en JavaFX sur le modèle MVC, avec plusieurs types de bombes et d'ennemis.",
-      longDescription: "Le joueur pose des bombes pour détruire les blocs et battre ses adversaires. Les Gobelins, les Minotaures et les Punkers ont chacun leur IA.",
+      description: "Un BomberMan en JavaFX, avec une carte aléatoire et des ennemis qui se déplacent.",
+      longDescription: "Le joueur se déplace avec les flèches sur une carte créée au lancement, où trois ennemis bougent au hasard. Les bombes ne sont pas encore jouables.",
       highlights: [
-        "Quatre sortes de bombes : classiques, en ligne, en croix et méga-bombes.",
-        "Trois types d'ennemis qui ne se comportent pas de la même façon.",
-        "Carte générée de façon procédurale avec le pattern Factory (murs incassables, briques, power-ups).",
-        "Code en MVC, avec une façade qui masque les détails internes."
+        "Carte de 13 lignes et 15 colonnes, avec 20 murs de briques placés au hasard.",
+        "Trois ennemis qui avancent d'une case par seconde.",
+        "Murs et briques qui bloquent le passage.",
+        "Une façade entre le contrôleur et le modèle."
       ],
       designPatterns: ["MVC", "Facade", "Factory"],
       tech: ["Java", "JavaFX", "Gradle"],
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
-      stats: { enemies: "3 types d'IA", pattern: "MVC + Facade", build: "Gradle" }
+      stats: { enemies: "3 ennemis", pattern: "MVC + Facade", build: "Gradle" }
     },
     {
       id: "odefrance",
       title: "OdeFrance",
-      subtitle: "Gestion des ventes et des stocks d'eau",
+      subtitle: "Gestion des stocks et des commandes d'eau",
       featured: true,
       platform: "desktop",
       platformLabel: "Desktop (JavaFX)",
       kind: "Universitaire",
-      date: "2024",
+      date: "2025",
       image: "assets/odefrance.jpg",
       logo: "assets/logos/provenceau.png",
       logoTheme: "night",
       screenshots: [
-        "assets/odefrance.jpg"
+        { src: "assets/captures/odefrance-1.webp", alt: "Menu principal d'OdeFrance" },
+        { src: "assets/captures/odefrance-2.webp", alt: "Stocks d'eau plate et d'eau gazeuse dans OdeFrance" },
+        { src: "assets/captures/odefrance-3.webp", alt: "Saisie d'une commande dans OdeFrance" }
       ],
-      description: "Application de gestion pour une entreprise de distribution d'eau, faite pour la SAE 2.01.",
-      longDescription: "L'entreprise vend des fontaines et des bouteilles d'eau. L'application gère ses commandes et ses factures, et prévient quand un stock devient trop bas.",
+      description: "Application de gestion pour une entreprise fictive de distribution d'eau, faite pour la SAE 2.01.",
+      longDescription: "Projet réalisé à quatre pour la SAE 2.01. L'application a un écran pour les clients, un pour les stocks et un pour les commandes. Les données restent en mémoire et toutes les fonctions du sujet ne sont pas terminées.",
       highlights: [
-        "Remises différentes pour les particuliers, les entreprises et les établissements publics.",
-        "Calcul automatique des prix, avec les remises de fidélité et les bouteilles offertes.",
-        "Suivi des stocks de plusieurs entrepôts, avec des seuils d'alerte.",
+        "Trois types de clients : particuliers, entreprises et établissements publics.",
+        "Bouteilles offertes selon le type de client, par exemple une pour 12 achetées chez les particuliers.",
+        "Ajout et suppression d'eau dans le stock.",
         "Interface JavaFX écrite en FXML."
       ],
-      designPatterns: ["DAO", "MVC", "Singleton"],
-      tech: ["Java", "JavaFX", "SQL", "Gradle"],
+      designPatterns: ["MVC", "Facade"],
+      tech: ["Java", "JavaFX", "Gradle"],
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
-      stats: { sae: "SAE 2.01", ui: "JavaFX / FXML", data: "SQL relationnel" }
+      stats: { sae: "SAE 2.01", ui: "JavaFX / FXML", data: "En mémoire" }
     },
     {
       id: "larsen-marathon",
       title: "LARSEN",
-      subtitle: "Site d'événements pour un marathon web",
+      subtitle: "Blog sur le grunge",
       featured: false,
       platform: "web",
       platformLabel: "Web",
       kind: "Universitaire",
-      date: "2024",
+      date: "2025",
       image: "assets/larsen.jpg",
       logo: "assets/logos/larsen.png",
       logoTheme: "black",
       screenshots: [
-        "assets/larsen.jpg"
+        { src: "assets/captures/larsen-1.webp", alt: "Page d'accueil de LARSEN" },
+        { src: "assets/captures/larsen-2.webp", alt: "Liste des articles de LARSEN avec les filtres" },
+        { src: "assets/captures/larsen-3.webp", alt: "Page À propos de LARSEN" }
       ],
-      description: "Application web collaborative en PHP pour gérer des événements musicaux, faite pendant un marathon web.",
-      longDescription: "LARSEN a été développé en temps limité pendant un marathon web. On y planifie des sessions musicales et on voit les créneaux de la programmation.",
+      description: "Blog musical en Laravel, fait en équipe pendant un marathon web.",
+      longDescription: "LARSEN est un blog consacré au grunge, développé en temps limité pendant un marathon web. Les visiteurs lisent les articles. Avec un compte, ils peuvent aussi en écrire et donner leur avis.",
       highlights: [
-        "Frontend séparé des scripts PHP.",
-        "Formulaires sécurisés, sessions utilisateur et données enregistrées en base.",
-        "Pages responsive, avec des aperçus dynamiques."
+        "Recherche et filtres par rythme, accessibilité et conclusion.",
+        "Articles que leur auteur peut modifier ou retirer de la ligne.",
+        "Avis et likes sur les articles, abonnement à d'autres utilisateurs.",
+        "Comptes gérés avec Laravel Fortify."
       ],
-      designPatterns: ["MVC Web", "Front Controller"],
-      tech: ["HTML", "CSS", "PHP", "SQL"],
+      designPatterns: ["MVC"],
+      tech: ["PHP", "Laravel", "SQL", "HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
-      stats: { format: "Marathon web", backend: "PHP", ui: "Responsive" }
+      stats: { format: "Marathon web", backend: "Laravel", database: "SQL" }
     },
     {
       id: "myanime-progress",
@@ -169,27 +177,30 @@ const PORTFOLIO_DATA = {
       subtitle: "Suivi d'animés",
       featured: false,
       platform: "web",
-      platformLabel: "Web / Outil",
+      platformLabel: "Web",
       kind: "Personnel",
-      date: "2024",
+      date: "2025-2026",
       image: "assets/myanime.jpg",
       logo: "assets/logos/myanime-progress.png",
       logoTheme: "light",
       screenshots: [
-        "assets/myanime.jpg"
+        { src: "assets/captures/myanime-progress-1.webp", alt: "Tableau de bord de MyAnimeProgress pour un nouveau compte" },
+        { src: "assets/captures/myanime-progress-2.webp", alt: "Page de connexion de MyAnimeProgress" }
       ],
-      description: "Application pour suivre les animés que je regarde, avec un calendrier des épisodes et des statistiques calculées en Python.",
-      longDescription: "Je voulais savoir où j'en étais dans les animés que je regarde. Un programme Python rassemble les données et calcule le temps passé.",
+      description: "Site en Flask pour noter à quel épisode on en est dans ses animés.",
+      longDescription: "Je voulais savoir où j'en étais dans les animés que je regarde. Le site récupère les fiches avec l'API Jikan et garde la progression de chaque compte dans une base SQLite.",
       highlights: [
-        "Tableau de bord avec la jaquette, le statut de diffusion et une jauge d'avancement.",
-        "Filtres par statut : En cours, Complété, En pause, Planifié.",
-        "Statistiques calculées en Python."
+        "Recherche d'animés et filtre par genre.",
+        "Tableau de bord avec les épisodes vus et le temps passé.",
+        "Liste de favoris.",
+        "Inscription avec un code de vérification envoyé par email.",
+        "Synopsis traduits en français."
       ],
-      designPatterns: ["Service Layer", "Data Mapper"],
-      tech: ["Python", "HTML", "CSS", "JavaScript"],
+      designPatterns: [],
+      tech: ["Python", "Flask", "SQL", "HTML", "CSS"],
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
-      stats: { stack: "Python et web", context: "Projet solo", usage: "Quotidien" }
+      stats: { stack: "Python et Flask", context: "Projet solo", api: "Jikan" }
     }
   ]
 };

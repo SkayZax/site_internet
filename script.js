@@ -1242,16 +1242,36 @@
      6. Modale de Projet Interactive (Dialog HTML5)
      ========================================================== */
   const modalDialog = $('#project-modal');
+  const gallery = { shots: [], index: 0 };
+
+  function showShot(index) {
+    const total = gallery.shots.length;
+    if (!total) return;
+    gallery.index = (index + total) % total;
+    const shot = gallery.shots[gallery.index];
+    const img = $('#modal-img');
+    img.src = shot.src;
+    img.alt = shot.alt;
+    $('#gallery-count').textContent = `${gallery.index + 1} / ${total}`;
+  }
 
   function openModal(projectId) {
     const proj = PORTFOLIO_DATA.projects.find(p => p.id === projectId);
     if (!proj || !modalDialog) return;
 
-    const visual = projectVisual(proj);
+    // Captures du projet ; sans capture, la fiche montre le logo
+    gallery.shots = proj.screenshots || [];
     const modalImg = $('#modal-img');
-    modalImg.src = visual.src;
-    modalImg.alt = visual.alt;
-    modalImg.className = `modal-hero-img ${visual.stageClass}`;
+    if (gallery.shots.length) {
+      modalImg.className = 'modal-hero-img modal-hero-img--shot';
+      showShot(0);
+    } else {
+      const visual = projectVisual(proj);
+      modalImg.src = visual.src;
+      modalImg.alt = visual.alt;
+      modalImg.className = `modal-hero-img ${visual.stageClass}`;
+    }
+    $('#modal-gallery').classList.toggle('has-many', gallery.shots.length > 1);
     $('#modal-kind').textContent = `${proj.kind} • ${proj.date}`;
     $('#modal-title').textContent = proj.title;
     $('#modal-subtitle').textContent = proj.subtitle;
@@ -1295,9 +1315,16 @@
     const closeBtn = $('#modal-close');
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
+    $('#gallery-prev').addEventListener('click', () => showShot(gallery.index - 1));
+    $('#gallery-next').addEventListener('click', () => showShot(gallery.index + 1));
+
     if (modalDialog) {
       modalDialog.addEventListener('click', (e) => {
         if (e.target === modalDialog) closeModal();
+      });
+      modalDialog.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') showShot(gallery.index - 1);
+        if (e.key === 'ArrowRight') showShot(gallery.index + 1);
       });
       modalDialog.addEventListener('close', () => {
         document.body.style.overflow = '';

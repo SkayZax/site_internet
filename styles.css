@@ -1407,13 +1407,66 @@ section {
   overflow-y: auto;
 }
 
+.modal-gallery {
+  position: relative;
+  margin-bottom: 24px;
+}
+
 .modal-hero-img {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-md);
-  margin-bottom: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Captures : entières et jamais agrandies */
+.modal-hero-img--shot {
+  object-fit: scale-down;
+  background: var(--ink-deep);
+}
+
+.gallery-btn,
+.gallery-count {
+  display: none;
+}
+.has-many .gallery-btn,
+.has-many .gallery-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-btn {
+  position: absolute;
+  background: rgba(20, 8, 34, 0.85);
+  border: 1px solid var(--panel-border);
+  color: var(--text-main);
+  top: calc(50% - 15px);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.gallery-btn:hover {
+  background: var(--sunset-deep);
+}
+.gallery-btn:focus-visible {
+  outline: 2px solid var(--sunset-gold);
+  outline-offset: 2px;
+}
+.gallery-btn--prev { left: 12px; }
+.gallery-btn--next { right: 12px; }
+
+.gallery-count {
+  margin-top: 10px;
+  height: 20px;
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
 }
 
 /* Logos de projets : jamais rognés, sur un fond adapté à leurs couleurs.
