@@ -1553,7 +1553,8 @@ img.logo-stage {
 .footer {
   position: relative;
   z-index: 3;
-  padding: 40px 0 60px;
+  padding-top: 40px;
+  padding-bottom: 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
