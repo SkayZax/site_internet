@@ -53,6 +53,8 @@ const PORTFOLIO_DATA = {
       kind: "Universitaire",
       date: "2024",
       image: "assets/pacman.jpg",
+      logo: "assets/logos/pacman.svg",
+      logoTheme: "night",
       screenshots: [
         "assets/pacman.jpg"
       ],
@@ -80,6 +82,8 @@ const PORTFOLIO_DATA = {
       kind: "Universitaire",
       date: "2024",
       image: "assets/bomberman.jpg",
+      logo: "assets/logos/bomberman.png",
+      logoTheme: "night",
       screenshots: [
         "assets/bomberman.jpg"
       ],
@@ -107,6 +111,8 @@ const PORTFOLIO_DATA = {
       kind: "Universitaire",
       date: "2024",
       image: "assets/odefrance.jpg",
+      logo: "assets/logos/provenceau.png",
+      logoTheme: "night",
       screenshots: [
         "assets/odefrance.jpg"
       ],
@@ -134,6 +140,8 @@ const PORTFOLIO_DATA = {
       kind: "Universitaire",
       date: "2024",
       image: "assets/larsen.jpg",
+      logo: "assets/logos/larsen.png",
+      logoTheme: "black",
       screenshots: [
         "assets/larsen.jpg"
       ],
@@ -160,6 +168,8 @@ const PORTFOLIO_DATA = {
       kind: "Personnel",
       date: "2024",
       image: "assets/myanime.jpg",
+      logo: "assets/logos/myanime-progress.png",
+      logoTheme: "light",
       screenshots: [
         "assets/myanime.jpg"
       ],
@@ -186,6 +196,8 @@ const PORTFOLIO_DATA = {
       kind: "Personnel",
       date: "2024",
       image: "assets/cookie.jpg",
+      logo: "assets/logos/cookie-clicker.png",
+      logoTheme: "cookie",
       screenshots: [
         "assets/cookie.jpg"
       ],

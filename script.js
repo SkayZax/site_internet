@@ -1045,6 +1045,13 @@
   /* ==========================================================
      4. Rendu des Projets à la Une (Featured)
      ========================================================== */
+  // Visuel d'un projet : son logo s'il en a un, sinon son image
+  const projectVisual = (proj) => ({
+    src: proj.logo || proj.image,
+    alt: proj.logo ? `Logo ${proj.title}` : proj.title,
+    stageClass: proj.logo ? `logo-stage logo-stage--${proj.logoTheme || 'night'}` : ''
+  });
+
   function renderFeatured() {
     const featuredContainer = $('#featured-list');
     if (!featuredContainer) return;
@@ -1055,10 +1062,11 @@
     featuredProjects.forEach(proj => {
       const card = document.createElement('article');
       card.className = 'featured-card';
+      const visual = projectVisual(proj);
       card.innerHTML = `
-        <div class="featured-media">
+        <div class="featured-media ${visual.stageClass}">
           <span class="featured-badge">${proj.platformLabel}</span>
-          <img src="${proj.image}" alt="${proj.title}" class="featured-img" loading="lazy">
+          <img src="${visual.src}" alt="${visual.alt}" class="featured-img" loading="lazy">
         </div>
         <div class="featured-info">
           <div class="featured-meta">
@@ -1129,14 +1137,15 @@
     filtered.forEach(proj => {
       const card = document.createElement('div');
       card.className = 'project-card';
+      const visual = projectVisual(proj);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `Voir les détails du projet ${proj.title}`);
 
       card.innerHTML = `
-        <div class="project-thumb">
+        <div class="project-thumb ${visual.stageClass}">
           <span class="project-badge-top">${proj.kind}</span>
-          <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+          <img src="${visual.src}" alt="${visual.alt}" loading="lazy">
         </div>
         <div class="project-body">
           <h4 class="project-card-title">${proj.title}</h4>
@@ -1232,8 +1241,11 @@
     const proj = PORTFOLIO_DATA.projects.find(p => p.id === projectId);
     if (!proj || !modalDialog) return;
 
-    $('#modal-img').src = proj.image;
-    $('#modal-img').alt = proj.title;
+    const visual = projectVisual(proj);
+    const modalImg = $('#modal-img');
+    modalImg.src = visual.src;
+    modalImg.alt = visual.alt;
+    modalImg.className = `modal-hero-img ${visual.stageClass}`;
     $('#modal-kind').textContent = `${proj.kind} • ${proj.date}`;
     $('#modal-title').textContent = proj.title;
     $('#modal-subtitle').textContent = proj.subtitle;

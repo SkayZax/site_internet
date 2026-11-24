@@ -1348,6 +1348,32 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Logos de projets : jamais rognés, sur un fond adapté à leurs couleurs.
+   La classe est posée sur le cadre (cartes) ou sur l'image (modale). */
+.logo-stage--night {
+  background: radial-gradient(circle at 50% 45%, #3a1a5c 0%, var(--ink-surface) 55%, var(--ink-deep) 100%);
+}
+.logo-stage--black {
+  background: radial-gradient(circle at 50% 45%, #26191c 0%, #0c0809 100%);
+}
+.logo-stage--light {
+  background: #FFF6EC;
+}
+.logo-stage--cookie {
+  background: radial-gradient(circle at 50% 50%, #86390f 0%, #6E2E0E 100%);
+}
+.logo-stage img,
+img.logo-stage {
+  object-fit: contain;
+  padding: clamp(36px, 11%, 56px) clamp(24px, 10%, 48px);
+}
+.logo-stage--cookie img {
+  padding-block: 44px 16px;
+}
+img.logo-stage--cookie {
+  padding-block: 24px;
+}
+
 .modal-kind-badge {
   display: inline-block;
   font-family: var(--font-mono);
