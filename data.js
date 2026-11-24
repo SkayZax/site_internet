@@ -12,7 +12,7 @@ const PORTFOLIO_DATA = {
     status: "À la recherche d'un stage ou d'une alternance pour 2026-2027",
     bio: "Passionné par l'architecture logicielle, la programmation orientée objet et les technologies web modernes. De la conception de moteurs de jeux en JavaFX à l'orchestration de bases de données et d'interfaces web réactives, j'aime concevoir du code propre, modulaire et performant.",
     location: "France",
-    email: "mathis.poirier1@outlook.fr",
+    email: "mathis140500@gmail.com",
     github: "https://github.com/skayzax",
     linkedin: "https://www.linkedin.com/in/mathis-poirier1/",
     website: "https://skayzax.fr/",
