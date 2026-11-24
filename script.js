@@ -1,5 +1,5 @@
 /* ==========================================================
-   Mathis Poirier (SkayZax) — Interactive Script & Mountain Canvas
+   Mathis Poirier (SkayZax), script du site et canvas des montagnes
    Crépuscule Alpin, Ciel Ambré & Nuit Étoilée
    ========================================================== */
 
@@ -1082,7 +1082,7 @@
           </div>
           <div class="featured-actions">
             <button type="button" class="btn btn-primary open-modal-btn" data-id="${proj.id}">
-              <span>Explorer l'architecture</span>
+              <span>Voir le projet</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -1154,7 +1154,7 @@
           <img src="${visual.src}" alt="${visual.alt}" loading="lazy">
         </div>
         <div class="project-body">
-          <h4 class="project-card-title">${proj.title}</h4>
+          <h3 class="project-card-title">${proj.title}</h3>
           <p class="project-card-sub">${proj.subtitle}</p>
           <p class="project-card-desc">${proj.description}</p>
           <div class="project-card-footer">
@@ -1403,9 +1403,9 @@ ${email}`);
 
         // Succès confirmé : poussée maximale de la fusée
         triggerRocketBoost();
-        showFeedback('success', 'Mise à feu réussie ! Votre message a bien été envoyé à Mathis.');
+        showFeedback('success', 'Votre message a bien été envoyé à Mathis.');
         form.reset();
-        showToast('🚀 Allumage des moteurs principaux ! Votre message décolle vers Mathis.');
+        showToast('Décollage ! Votre message part vers Mathis.');
       } catch (err) {
         console.error('Formulaire de contact :', err);
         showSendError(fields);
