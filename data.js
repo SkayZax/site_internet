@@ -20,6 +20,11 @@ const PORTFOLIO_DATA = {
     cvEn: "cv/cv-ang.pdf"
   },
 
+  contact: {
+    // Clé Web3Forms (publique, à obtenir sur https://web3forms.com)
+    web3formsKey: "fbdd2a7b-1d47-480d-9d52-43e6a3b03de3"
+  },
+
   skills: {
     languages: [
       { id: "java", name: "Java (21/17)", icon: "java/java-original", category: "lang", count: 3 },

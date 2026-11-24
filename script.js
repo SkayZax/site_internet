@@ -1317,40 +1317,98 @@
 
     const form = $('#contact-form');
     const feedback = $('#form-feedback');
+    const submitBtn = $('#cf-submit');
+    if (!form || !feedback || !submitBtn) return;
 
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    const submitLabel = submitBtn.querySelector('span');
+    const idleLabel = submitLabel.textContent;
 
-        const name = $('#cf-name').value.trim();
-        const email = $('#cf-email').value.trim();
-        const message = $('#cf-msg').value.trim();
+    const showFeedback = (type, ...content) => {
+      feedback.className = `form-feedback ${type}`;
+      feedback.replaceChildren(...content);
+      feedback.style.display = 'flex';
+    };
 
-        if (!name || !email || !message) {
-          if (feedback) {
-            feedback.className = 'form-feedback error';
-            feedback.textContent = 'Veuillez renseigner tous les champs du formulaire.';
-            feedback.style.display = 'flex';
-          }
-          return;
+    // Échec d'envoi : le message saisi est conservé et un lien mail prérempli est proposé
+    const showSendError = ({ name, email, message }) => {
+      const subject = encodeURIComponent(`Portfolio : message de ${name}`);
+      const body = encodeURIComponent(`${message}
+
+${name}
+${email}`);
+      const link = document.createElement('a');
+      link.href = `mailto:${PORTFOLIO_DATA.profile.email}?subject=${subject}&body=${body}`;
+      link.textContent = 'Écrivez-moi directement par email';
+      const text = document.createElement('span');
+      text.append("Le message n'a pas pu être envoyé. ", link, '.');
+      showFeedback('error', text);
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitBtn.disabled) return;
+
+      const fields = {
+        name: $('#cf-name').value.trim(),
+        email: $('#cf-email').value.trim(),
+        message: $('#cf-msg').value.trim()
+      };
+
+      if (!fields.name || !fields.email || !fields.message) {
+        showFeedback('error', 'Veuillez renseigner tous les champs du formulaire.');
+        return;
+      }
+      if (!$('#cf-email').checkValidity()) {
+        showFeedback('error', 'Veuillez saisir une adresse email valide.');
+        return;
+      }
+
+      const accessKey = PORTFOLIO_DATA.contact.web3formsKey;
+      if (!accessKey) {
+        console.error('Formulaire de contact : contact.web3formsKey est vide dans data.js.');
+        showSendError(fields);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Envoi en cours…';
+      feedback.style.display = 'none';
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `Portfolio : message de ${fields.name}`,
+            from_name: 'Portfolio SkayZax',
+            botcheck: $('#cf-botcheck').checked,
+            ...fields
+          }),
+          signal: controller.signal
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || `HTTP ${response.status}`);
         }
 
-        // Déclenche la poussée maximale et le boost de la fusée
+        // Succès confirmé : poussée maximale de la fusée
         triggerRocketBoost();
-
-        if (feedback) {
-          feedback.className = 'form-feedback success';
-          feedback.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Mise à feu réussie ! Les moteurs principaux propulsent votre message à Mathis.</span>
-          `;
-          feedback.style.display = 'flex';
-        }
-
+        showFeedback('success', 'Mise à feu réussie ! Votre message a bien été envoyé à Mathis.');
         form.reset();
         showToast('🚀 Allumage des moteurs principaux ! Votre message décolle vers Mathis.');
-      });
-    }
+      } catch (err) {
+        console.error('Formulaire de contact :', err);
+        showSendError(fields);
+      } finally {
+        clearTimeout(timeout);
+        submitBtn.disabled = false;
+        submitLabel.textContent = idleLabel;
+      }
+    });
   }
 
   function showToast(text) {

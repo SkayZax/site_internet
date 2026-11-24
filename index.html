@@ -305,6 +305,9 @@
             <textarea class="form-textarea" id="cf-msg" name="message" placeholder="Votre opportunité de stage, alternance ou votre message..." required></textarea>
           </div>
 
+          <!-- Piège anti-spam : invisible, un humain ne le coche jamais -->
+          <input type="checkbox" name="botcheck" id="cf-botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
           <div class="form-submit-wrap">
             <button class="btn btn-primary" type="submit" id="cf-submit">
               <span>Envoyer le message</span>
