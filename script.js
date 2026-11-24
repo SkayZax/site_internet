@@ -1442,6 +1442,44 @@ ${email}`);
     }
   }
 
+  /* Menu de navigation mobile */
+  function setupMobileNav() {
+    const toggle = $('#nav-toggle');
+    const menu = $('#nav-menu');
+    if (!toggle || !menu) return;
+
+    const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      menu.classList.toggle('open', open);
+    };
+
+    toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (isOpen() && !e.target.closest('#nav-menu, #nav-toggle')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen()) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    // Ferme le menu quand le focus clavier en sort
+    menu.addEventListener('focusout', (e) => {
+      if (e.relatedTarget && !e.relatedTarget.closest('#nav-menu, #nav-toggle')) setOpen(false);
+    });
+
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', () => setOpen(false));
+  }
+
   function setupEventListeners() {
     window.addEventListener('mousemove', (e) => {
       state.mouse.x = e.clientX;
@@ -1530,6 +1568,7 @@ ${email}`);
     setupModalEvents();
     setupContact();
     setupSpotlightAndTilt();
+    setupMobileNav();
     setupEventListeners();
 
     requestAnimationFrame(animate);
