@@ -75,7 +75,7 @@ const PORTFOLIO_DATA = {
       ],
       designPatterns: ["MVC"],
       tech: ["Java", "JavaFX", "Gradle"],
-      githubUrl: "https://github.com/skayzax",
+      githubUrl: "https://github.com/SkayZax/pacman",
       demoUrl: null,
       stats: { architecture: "MVC", loop: "AnimationTimer", stack: "Java 21" }
     },
@@ -105,7 +105,7 @@ const PORTFOLIO_DATA = {
       ],
       designPatterns: ["MVC", "Facade", "Factory"],
       tech: ["Java", "JavaFX", "Gradle"],
-      githubUrl: "https://github.com/skayzax",
+      githubUrl: "https://github.com/SkayZax/BomberMan",
       demoUrl: null,
       stats: { enemies: "3 ennemis", pattern: "MVC + Facade", build: "Gradle" }
     },
@@ -136,7 +136,7 @@ const PORTFOLIO_DATA = {
       ],
       designPatterns: ["MVC", "Facade"],
       tech: ["Java", "JavaFX", "Gradle"],
-      githubUrl: "https://github.com/skayzax",
+      githubUrl: "https://github.com/SkayZax/odefrance",
       demoUrl: null,
       stats: { sae: "SAE 2.01", ui: "JavaFX / FXML", data: "En mémoire" }
     },
@@ -167,7 +167,7 @@ const PORTFOLIO_DATA = {
       ],
       designPatterns: ["MVC"],
       tech: ["PHP", "Laravel", "SQL", "HTML", "CSS", "JavaScript"],
-      githubUrl: "https://github.com/skayzax",
+      githubUrl: "https://github.com/SkayZax/marthon-web",
       demoUrl: null,
       stats: { format: "Marathon web", backend: "Laravel", database: "SQL" }
     },
@@ -198,7 +198,7 @@ const PORTFOLIO_DATA = {
       ],
       designPatterns: [],
       tech: ["Python", "Flask", "SQL", "HTML", "CSS"],
-      githubUrl: "https://github.com/skayzax",
+      githubUrl: "https://github.com/SkayZax/MyAnimeProgress",
       demoUrl: null,
       stats: { stack: "Python et Flask", context: "Projet solo", api: "Jikan" }
     }
