@@ -33,8 +33,8 @@ const PORTFOLIO_DATA = {
       { id: "javascript", name: "JavaScript", icon: "javascript/javascript-original", category: "lang", count: 1 },
       { id: "php", name: "PHP", icon: "php/php-original", category: "lang", count: 1 },
       { id: "sql", name: "SQL / PLpgSQL", icon: "postgresql/postgresql-original", category: "lang", count: 2 },
-      { id: "html", name: "HTML5", icon: "html5/html5-original", category: "lang", count: 3 },
-      { id: "css", name: "CSS3", icon: "css3/css3-original", category: "lang", count: 3 }
+      { id: "html", name: "HTML5", icon: "html5/html5-original", category: "lang", count: 2 },
+      { id: "css", name: "CSS3", icon: "css3/css3-original", category: "lang", count: 2 }
     ],
     tools: [
       { id: "git", name: "Git & GitHub/GitLab", icon: "git/git-original", category: "tool" },
@@ -190,34 +190,6 @@ const PORTFOLIO_DATA = {
       githubUrl: "https://github.com/skayzax",
       demoUrl: null,
       stats: { stack: "Python & Web", context: "Projet Solo", usage: "Quotidien" }
-    },
-    {
-      id: "cookie-clicker",
-      title: "Cosmic Cookie Clicker",
-      subtitle: "Mini-Jeu Incrémental JavaScript",
-      featured: false,
-      platform: "web",
-      platformLabel: "Web",
-      kind: "Personnel",
-      date: "2024",
-      image: "assets/cookie.jpg",
-      logo: "assets/logos/cookie-clicker.png",
-      logoTheme: "cookie",
-      screenshots: [
-        "assets/cookie.jpg"
-      ],
-      description: "Mini-jeu web incrémental interactif explorant les boucles d'événements JavaScript, les multiplicateurs exponentiels et la sauvegarde en temps réel.",
-      longDescription: "Jeu développé pour explorer la manipulation avancée du DOM, les micro-animations CSS et la gestion du stockage local (LocalStorage) avec des boucles de calcul exponentielles.",
-      highlights: [
-        "Boucle de jeu synchrone fluide avec calcul de Cookies Par Seconde (CPS).",
-        "Système de multiplicateurs et d'améliorations déblocables au fil des paliers.",
-        "Sauvegarde automatique de la progression dans le navigateur."
-      ],
-      designPatterns: ["Game Loop", "Observer"],
-      tech: ["JavaScript", "HTML", "CSS"],
-      githubUrl: "https://github.com/skayzax",
-      demoUrl: null,
-      stats: { type: "Mini-Jeu", tech: "Pure JS", loop: "RequestAnimationFrame" }
     }
   ]
 };

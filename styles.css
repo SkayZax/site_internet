@@ -1367,19 +1367,10 @@ section {
 .logo-stage--light {
   background: #FFF6EC;
 }
-.logo-stage--cookie {
-  background: radial-gradient(circle at 50% 50%, #86390f 0%, #6E2E0E 100%);
-}
 .logo-stage img,
 img.logo-stage {
   object-fit: contain;
   padding: clamp(36px, 11%, 56px) clamp(24px, 10%, 48px);
-}
-.logo-stage--cookie img {
-  padding-block: 44px 16px;
-}
-img.logo-stage--cookie {
-  padding-block: 24px;
 }
 
 .modal-kind-badge {
