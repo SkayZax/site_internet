@@ -9,9 +9,9 @@ const PORTFOLIO_DATA = {
     pseudo: "SkayZax",
     role: "Développeur logiciel et web",
     education: "Étudiant en BUT Informatique",
-    status: "À la recherche d'un stage ou d'une alternance pour 2026-2027",
+    status: "À la recherche d'un stage ou d'une alternance, début possible le 15 mars 2027",
     bio: "Je programme surtout en Java avec JavaFX, et je fais aussi des sites web.",
-    location: "France",
+    location: "Lens (mobile sur Lille, Arras et alentours)",
     email: "mathis140500@gmail.com",
     github: "https://github.com/skayzax",
     linkedin: "https://www.linkedin.com/in/mathis-poirier1/",
@@ -67,6 +67,11 @@ const PORTFOLIO_DATA = {
       ],
       description: "Pac-Man refait en JavaFX, à quatre, pendant le BUT Informatique.",
       longDescription: "Projet universitaire réalisé à quatre, à partir d'une base fournie en cours. Le joueur commence avec trois vies, mange les pac-gommes et évite quatre fantômes qui se déplacent au hasard.",
+      myRole: [
+        "J'ai écrit la classe PacMan : les vies et le score sont des propriétés JavaFX liées à l'affichage.",
+        "Les collisions du joueur : 10 points par pac-gomme, une vie en moins au contact d'un fantôme, fin de partie à zéro vie.",
+        "Le retour de Pac-Man à sa position de départ après la perte d'une vie."
+      ],
       highlights: [
         "Carte générée par le programme.",
         "Collisions entre le joueur, les fantômes et les pac-gommes, avec un score et des vies.",
@@ -159,6 +164,13 @@ const PORTFOLIO_DATA = {
       ],
       description: "Blog musical en Laravel, fait en équipe pendant un marathon web.",
       longDescription: "LARSEN est un blog consacré au grunge, développé en temps limité pendant un marathon web. Les visiteurs lisent les articles. Avec un compte, ils peuvent aussi en écrire et donner leur avis.",
+      myRole: [
+        "La page d'un article, avec sa route et son contrôleur.",
+        "Le formulaire de création d'article, avec l'ajout de médias.",
+        "Les boutons like et dislike sur les articles.",
+        "Des composants Blade réutilisables : en-tête, pied de page, bouton et messages d'alerte.",
+        "La page À propos, la favicon et plusieurs corrections d'affichage."
+      ],
       highlights: [
         "Recherche et filtres par rythme, accessibilité et conclusion.",
         "Articles que leur auteur peut modifier ou retirer de la ligne.",

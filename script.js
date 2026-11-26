@@ -1277,6 +1277,17 @@
     $('#modal-subtitle').textContent = proj.subtitle;
     $('#modal-long-desc').textContent = proj.longDescription || proj.description;
 
+    // Ce que j'ai fait moi-même dans les projets de groupe
+    const roleWrap = $('#modal-role-wrap');
+    const roleList = $('#modal-role-list');
+    roleList.innerHTML = '';
+    (proj.myRole || []).forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      roleList.appendChild(li);
+    });
+    roleWrap.style.display = proj.myRole && proj.myRole.length > 0 ? 'block' : 'none';
+
     const hlList = $('#modal-highlights-list');
     hlList.innerHTML = '';
     (proj.highlights || []).forEach(hl => {

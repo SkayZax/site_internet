@@ -455,6 +455,28 @@ main {
   font-weight: 700;
 }
 
+/* Infos pratiques : ville et date de début */
+.hero-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: -8px 0 28px;
+  padding: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+.hero-facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-facts svg {
+  flex-shrink: 0;
+  color: var(--sunset-hot);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -639,7 +661,87 @@ section {
   color: var(--text-soft);
   max-width: 820px;
   line-height: 1.7;
-  margin-bottom: 44px;
+  margin-bottom: 36px;
+}
+
+/* Formation */
+.about-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-bottom: 16px;
+}
+
+.about-timeline {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0 0 0 22px;
+  border-left: 2px solid rgba(255, 138, 61, 0.35);
+  display: grid;
+  gap: 22px;
+}
+.about-timeline li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.about-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--ink-surface);
+  border: 2px solid var(--sunset-hot);
+}
+.about-timeline li:first-child::before {
+  background: var(--sunset-hot);
+  box-shadow: 0 0 0 4px var(--sunset-glow);
+}
+.timeline-when {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.timeline-what {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.timeline-where {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+.timeline-details {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  max-width: 760px;
+}
+/* Annule la pastille de la frise pour les sous-points */
+.about-timeline .timeline-details li {
+  display: block;
+  padding-left: 18px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+.about-timeline .timeline-details li::before {
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border: none;
+  background: var(--sunset-hot);
+  box-shadow: none;
 }
 
 .about-stats {

@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <!-- Lien d'évitement -->
@@ -98,6 +98,17 @@
           Développeur d'applications, étudiant en BUT Informatique. Je fais des logiciels de bureau en JavaFX et des applications web.
         </p>
 
+        <ul class="hero-facts">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Lens, mobile sur Lille, Arras et alentours
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+            Début possible le 15 mars 2027
+          </li>
+        </ul>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Me contacter</a>
           <a class="btn btn-ghost" href="#projets">Voir mes projets</a>
@@ -123,18 +134,47 @@
           Mes projets en Java viennent du BUT Informatique. Pour Pac-Man, nous étions quatre à programmer un jeu en JavaFX. OdeFrance, aussi fait à quatre, gère les stocks et les commandes d'un vendeur d'eau. Sur mon temps libre, j'ai fait MyAnimeProgress, un site en Flask pour suivre mes animés.
         </p>
 
+        <h3 class="about-subtitle">Expérience</h3>
+        <ol class="about-timeline">
+          <li>
+            <span class="timeline-when">Stage · développement web en solo</span>
+            <span class="timeline-what">Association Naturaliste de la Gohelle (ANG)</span>
+            <span class="timeline-where">Liévin · site existant en Laravel</span>
+            <ul class="timeline-details">
+              <li>Fiches espèces avec export en PDF (DomPDF).</li>
+              <li>Gestion des réunions, actualités, réalisations et événements.</li>
+              <li>Diaporamas en PDF ou YouTube, envoi de plusieurs photos à la fois, page de liens, dates sur les activités.</li>
+              <li>5 nouvelles tables en base de données et 5 contrôleurs.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3 class="about-subtitle">Formation</h3>
+        <ol class="about-timeline">
+          <li>
+            <span class="timeline-when">2026-2027 · en cours</span>
+            <span class="timeline-what">BUT Informatique, 3<sup>e</sup> année</span>
+            <span class="timeline-where">IUT de Lens</span>
+          </li>
+          <li>
+            <span class="timeline-when">Avant le BUT</span>
+            <span class="timeline-what">Bac STI2D</span>
+            <span class="timeline-where">Option SIN (Systèmes d'information et numérique)</span>
+          </li>
+        </ol>
+
         <div class="about-stats">
           <div class="stat-item">
-            <span class="stat-num">5</span>
-            <span class="stat-label">Projets sur ce site</span>
+            <span class="stat-num">BUT 3</span>
+            <span class="stat-label">Informatique, IUT de Lens</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Sites web</span>
+            <span class="stat-num">15/03/2027</span>
+            <span class="stat-label">Début possible en entreprise</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">3</span>
-            <span class="stat-label">Applications JavaFX</span>
+            <span class="stat-num">Java</span>
+            <span class="stat-label">Mon langage principal, avec JavaFX</span>
           </div>
         </div>
       </div>
@@ -360,6 +400,11 @@
 
         <p class="modal-desc" id="modal-long-desc"></p>
 
+        <div id="modal-role-wrap">
+          <h4 class="modal-section-title">Ma part du travail</h4>
+          <ul class="modal-highlights" id="modal-role-list"></ul>
+        </div>
+
         <h4 class="modal-section-title">Fonctionnalités</h4>
         <ul class="modal-highlights" id="modal-highlights-list"></ul>
 
@@ -411,7 +456,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data.js?v=7"></script>
-  <script src="script.js?v=5"></script>
+  <script src="data.js?v=8"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
