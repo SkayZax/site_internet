@@ -506,9 +506,10 @@ main {
 
 /* Le Nom Monumental derrière la crête */
 .hero-name-wrap {
-  position: absolute;
-  left: var(--gutter);
-  bottom: 6vh;
+  /* Dans le flux : le flex space-between le pousse en bas du héro,
+     et le héro s'agrandit plutôt que de laisser le nom chevaucher l'intro. */
+  position: relative;
+  margin-top: 32px;
   z-index: 1; /* Derrière le canvas #ridge (z-index: 2) */
   pointer-events: none;
   user-select: none;
@@ -517,7 +518,8 @@ main {
 .hero-name {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(4.8rem, 16vw, 15.5rem);
+  /* Limité aussi par la hauteur d'écran pour tenir sur les écrans bas */
+  font-size: min(clamp(4.8rem, 16vw, 15.5rem), 26vh);
   line-height: 0.82;
   letter-spacing: -0.015em;
   text-transform: uppercase;
