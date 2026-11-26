@@ -8,6 +8,50 @@
 
   const DEVICON_BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
 
+  /* Textes de l'interface générés par le script, selon la langue de la page (<html lang>) */
+  const LANG = document.documentElement.lang.startsWith('en') ? 'en' : 'fr';
+  const I18N = {
+    fr: {
+      viewProject: 'Voir le projet',
+      details: 'Détails',
+      projectAria: (title) => `Voir les détails du projet ${title}`,
+      resultCount: (n) => `${n} projet${n > 1 ? 's' : ''} trouvé${n > 1 ? 's' : ''}`,
+      logoAlt: (title) => `Logo ${title}`,
+      emailCopied: (email) => `Email copié dans le presse-papier : ${email}`,
+      emailFallback: (email) => `Email : ${email}`,
+      mailSubject: (name) => `Portfolio : message de ${name}`,
+      writeDirectly: 'Écrivez-moi directement par email',
+      sendFailed: "Le message n'a pas pu être envoyé. ",
+      fillAll: 'Veuillez renseigner tous les champs du formulaire.',
+      invalidEmail: 'Veuillez saisir une adresse email valide.',
+      sending: 'Envoi en cours…',
+      sent: 'Votre message a bien été envoyé à Mathis.',
+      liftoff: 'Décollage ! Votre message part vers Mathis.',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu'
+    },
+    en: {
+      viewProject: 'View project',
+      details: 'Details',
+      projectAria: (title) => `View details of the ${title} project`,
+      resultCount: (n) => `${n} project${n > 1 ? 's' : ''} found`,
+      logoAlt: (title) => `${title} logo`,
+      emailCopied: (email) => `Email copied to clipboard: ${email}`,
+      emailFallback: (email) => `Email: ${email}`,
+      mailSubject: (name) => `Portfolio: message from ${name}`,
+      writeDirectly: 'Email me directly',
+      sendFailed: 'Your message could not be sent. ',
+      fillAll: 'Please fill in all the fields.',
+      invalidEmail: 'Please enter a valid email address.',
+      sending: 'Sending…',
+      sent: 'Your message has been sent to Mathis.',
+      liftoff: 'Liftoff! Your message is on its way to Mathis.',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu'
+    }
+  };
+  const t = I18N[LANG];
+
   /* Sélecteurs Utilitaires */
   const $ = (selector, context = document) => context.querySelector(selector);
   const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
@@ -1048,7 +1092,7 @@
   // Visuel d'un projet : son logo s'il en a un, sinon son image
   const projectVisual = (proj) => ({
     src: proj.logo || proj.image,
-    alt: proj.logo ? `Logo ${proj.title}` : proj.title,
+    alt: proj.logo ? t.logoAlt(proj.title) : proj.title,
     stageClass: proj.logo ? `logo-stage logo-stage--${proj.logoTheme || 'night'}` : ''
   });
 
@@ -1082,7 +1126,7 @@
           </div>
           <div class="featured-actions">
             <button type="button" class="btn btn-primary open-modal-btn" data-id="${proj.id}">
-              <span>Voir le projet</span>
+              <span>${t.viewProject}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -1130,7 +1174,7 @@
     });
 
     if (countEl) {
-      countEl.textContent = `${filtered.length} projet${filtered.length > 1 ? 's' : ''} trouvé${filtered.length > 1 ? 's' : ''}`;
+      countEl.textContent = t.resultCount(filtered.length);
     }
 
     if (filtered.length === 0) {
@@ -1146,7 +1190,7 @@
       const visual = projectVisual(proj);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', `Voir les détails du projet ${proj.title}`);
+      card.setAttribute('aria-label', t.projectAria(proj.title));
 
       card.innerHTML = `
         <div class="project-thumb ${visual.stageClass}">
@@ -1162,7 +1206,7 @@
               ${proj.tech.slice(0, 3).map(t => `<span class="chip-mini">${t}</span>`).join('')}
             </div>
             <span class="btn-inspect">
-              Détails
+              ${t.details}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -1359,9 +1403,9 @@
       copyBtn.addEventListener('click', () => {
         const email = PORTFOLIO_DATA.profile.email;
         navigator.clipboard.writeText(email).then(() => {
-          showToast(`Email copié dans le presse-papier : ${email}`);
+          showToast(t.emailCopied(email));
         }).catch(() => {
-          showToast(`Email : ${email}`);
+          showToast(t.emailFallback(email));
         });
       });
     }
@@ -1382,16 +1426,16 @@
 
     // Échec d'envoi : le message saisi est conservé et un lien mail prérempli est proposé
     const showSendError = ({ name, email, message }) => {
-      const subject = encodeURIComponent(`Portfolio : message de ${name}`);
+      const subject = encodeURIComponent(t.mailSubject(name));
       const body = encodeURIComponent(`${message}
 
 ${name}
 ${email}`);
       const link = document.createElement('a');
       link.href = `mailto:${PORTFOLIO_DATA.profile.email}?subject=${subject}&body=${body}`;
-      link.textContent = 'Écrivez-moi directement par email';
+      link.textContent = t.writeDirectly;
       const text = document.createElement('span');
-      text.append("Le message n'a pas pu être envoyé. ", link, '.');
+      text.append(t.sendFailed, link, '.');
       showFeedback('error', text);
     };
 
@@ -1406,11 +1450,11 @@ ${email}`);
       };
 
       if (!fields.name || !fields.email || !fields.message) {
-        showFeedback('error', 'Veuillez renseigner tous les champs du formulaire.');
+        showFeedback('error', t.fillAll);
         return;
       }
       if (!$('#cf-email').checkValidity()) {
-        showFeedback('error', 'Veuillez saisir une adresse email valide.');
+        showFeedback('error', t.invalidEmail);
         return;
       }
 
@@ -1422,7 +1466,7 @@ ${email}`);
       }
 
       submitBtn.disabled = true;
-      submitLabel.textContent = 'Envoi en cours…';
+      submitLabel.textContent = t.sending;
       feedback.style.display = 'none';
 
       const controller = new AbortController();
@@ -1434,7 +1478,7 @@ ${email}`);
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
             access_key: accessKey,
-            subject: `Portfolio : message de ${fields.name}`,
+            subject: t.mailSubject(fields.name),
             from_name: 'Portfolio SkayZax',
             botcheck: $('#cf-botcheck').checked,
             ...fields
@@ -1448,9 +1492,9 @@ ${email}`);
 
         // Succès confirmé : poussée maximale de la fusée
         triggerRocketBoost();
-        showFeedback('success', 'Votre message a bien été envoyé à Mathis.');
+        showFeedback('success', t.sent);
         form.reset();
-        showToast('Décollage ! Votre message part vers Mathis.');
+        showToast(t.liftoff);
       } catch (err) {
         console.error('Formulaire de contact :', err);
         showSendError(fields);
@@ -1496,7 +1540,7 @@ ${email}`);
     const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
     const setOpen = (open) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      toggle.setAttribute('aria-label', open ? t.closeMenu : t.openMenu);
       menu.classList.toggle('open', open);
     };
 

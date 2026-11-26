@@ -7,6 +7,9 @@
   <meta name="description" content="Portfolio de Mathis Poirier (SkayZax), étudiant en BUT Informatique. Jeux et applications en JavaFX, sites web en Laravel et en Flask.">
   <meta name="theme-color" content="#E26823">
   <link rel="canonical" href="https://skayzax.fr/">
+  <link rel="alternate" hreflang="fr" href="https://skayzax.fr/">
+  <link rel="alternate" hreflang="en" href="https://skayzax.fr/en/">
+  <link rel="alternate" hreflang="x-default" href="https://skayzax.fr/">
 
   <!-- Icônes -->
   <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -16,6 +19,7 @@
   <!-- Open Graph (aperçu du lien sur LinkedIn, Discord, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:site_name" content="Mathis Poirier">
   <meta property="og:url" content="https://skayzax.fr/">
   <meta property="og:title" content="Mathis Poirier, développeur d'applications et web">
@@ -32,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <!-- Lien d'évitement -->
@@ -66,6 +70,7 @@
       </div>
 
       <div class="nav-cta-group">
+        <a class="lang-switch" href="/en/" hreflang="en" lang="en" title="English version" aria-label="English version">EN</a>
         <div class="cv-menu-wrap">
           <button type="button" class="cv-pill" aria-haspopup="true" aria-expanded="false">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
@@ -128,7 +133,7 @@
       <div class="about-card">
         <span class="section-label">• À propos</span>
         <h2 id="about-title" class="about-lead">
-          Je programme surtout en <span>Java avec JavaFX</span>, et je fais aussi des sites web.
+          Je programme surtout en <span>Java</span>, et je fais aussi des sites web.
         </h2>
         <p class="about-text">
           Mes projets en Java viennent du BUT Informatique. Pour Pac-Man, nous étions quatre à programmer un jeu en JavaFX. OdeFrance, aussi fait à quatre, gère les stocks et les commandes d'un vendeur d'eau. Sur mon temps libre, j'ai fait MyAnimeProgress, un site en Flask pour suivre mes animés.
@@ -174,7 +179,7 @@
           </div>
           <div class="stat-item">
             <span class="stat-num">Java</span>
-            <span class="stat-label">Mon langage principal, avec JavaFX</span>
+            <span class="stat-label">Mon langage principal</span>
           </div>
         </div>
       </div>
@@ -456,7 +461,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data.js?v=8"></script>
-  <script src="script.js?v=6"></script>
+  <script src="data.js?v=9"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

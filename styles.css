@@ -319,6 +319,31 @@ main {
 .nav-cta-group {
   display: flex;
   align-items: center;
+  gap: 8px;
+}
+
+/* Bouton de changement de langue (FR / EN) */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 7px 11px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--panel-border);
+  background: rgba(26, 13, 44, 0.6);
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: var(--transition);
+}
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  border-color: var(--sunset-hot);
+  color: var(--sunset-peach);
+  background: rgba(255, 138, 61, 0.12);
 }
 
 .cv-menu-wrap {
@@ -1824,6 +1849,23 @@ img.logo-stage {
 }
 
 @media (max-width: 480px) {
+  /* Barre de navigation : garder le nom sur une ligne avec FR/EN, CV et menu */
+  .brand-name {
+    white-space: nowrap;
+  }
+  .nav-cta-group {
+    gap: 6px;
+  }
+  .lang-switch {
+    min-width: 0;
+    padding: 7px 9px;
+  }
+  .cv-pill {
+    padding: 7px 12px;
+  }
+  .cv-pill svg {
+    display: none;
+  }
   .hero-actions {
     flex-direction: column;
     width: 100%;

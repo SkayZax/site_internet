@@ -10,7 +10,7 @@ const PORTFOLIO_DATA = {
     role: "Développeur logiciel et web",
     education: "Étudiant en BUT Informatique",
     status: "À la recherche d'un stage ou d'une alternance, début possible le 15 mars 2027",
-    bio: "Je programme surtout en Java avec JavaFX, et je fais aussi des sites web.",
+    bio: "Je programme surtout en Java, et je fais aussi des sites web.",
     location: "Lens (mobile sur Lille, Arras et alentours)",
     email: "mathis140500@gmail.com",
     github: "https://github.com/skayzax",
